@@ -1,0 +1,46 @@
+/**my Start**/
+.no-padding{
+  padding:0!important;
+}
+.no-margin-bottom{
+  margin-bottom:0 !important;
+}
+#my-view{
+  .share-list{
+    .col{
+      span,i{
+        display: block;
+      }
+      .icon{
+        font-size:24px;
+      }
+    }
+  }
+  .setting-list{
+    .item{
+      color:#666;
+      padding:10px;
+      padding-left:40px;
+
+      &.item-icon-right{
+        .icon{
+          right:0;
+        }
+      }
+    }
+    .item-divider{
+      padding:0;
+      min-height: 10px;
+    }
+
+    .icon{
+      font-size:18px;
+    }
+
+    .button{
+      color:#f00;
+    }
+  }
+
+}
+/**my  End**/

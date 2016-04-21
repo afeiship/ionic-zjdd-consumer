@@ -1,0 +1,31 @@
+/**setttings Start**/
+#settings-view{
+  .list{
+    .item{
+      font-size:14px;
+      padding:10px;
+      &:first-child{
+        border-top:none;
+      }
+      >.icon{
+        font-size:16px;
+        color:#666;
+      }
+      .row-center{
+        width:90%;
+        >*{
+          display: inline-block;
+        }
+        span{
+          width:70%;
+        }
+        em{
+          width:30%;
+          text-align: right;
+          color:#999;
+        }
+      }
+    }
+  }
+}
+/**setttings  End**/

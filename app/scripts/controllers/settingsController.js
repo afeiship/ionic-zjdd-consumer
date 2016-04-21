@@ -7,8 +7,25 @@
  * # SettingsController
  */
 angular.module('IonicZjddConsumer')
-  .controller('SettingsController', function($scope) {
+  .controller('SettingsCtrl', function ($scope, $ionicActionSheet) {
+    var vm = this;
+    vm.showModal = showModal;
 
-    // do something with $scope
+    function showModal() {
 
+      var hideSheet = $ionicActionSheet.show({
+        buttons: [
+          {text: '拍照'},
+          {text: '从相册选择'}
+        ],
+        titleText: '上传照片',
+        cancelText: '取消',
+        cancel: function () {
+          console.log('I have canceled!');
+        },
+        buttonClicked: function (index) {
+          return true;
+        }
+      });
+    }
   });

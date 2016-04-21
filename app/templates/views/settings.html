@@ -1,27 +1,44 @@
-<ion-view>
-    <ion-header-bar align-title="center" class="bar-positive">
-    <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
-        <h1 class="title">Settings</h1>
-    </ion-header-bar>
+<ion-view id="settings-view">
+  <ion-header-bar align-title="center" class="bar-light">
+    <button class="button button-icon icon ion-ios-arrow-left"></button>
+    <h1 class="title">账户信息</h1>
+  </ion-header-bar>
 
-    <ion-content>
-        <div class="list">
+  <ion-content>
+    <div class="list">
 
-            <!-- connect toggles to controller using ng-model -->
-
-            <ion-toggle>
-                <span class="settings-item__text">
-                    Allow Push Notifications
-                </span>
-            </ion-toggle>
-
-            <ion-toggle>
-                <span class="settings-item__text">
-                    Allow cookies
-                </span>
-            </ion-toggle>
-
+      <a class="item item-icon-right" href="javascript:;" ng-click="vm.showModal()">
+        <div class="row row-center">
+          <span>头像</span>
+          <em><img src="images/zjdd-rect-logo.png" width="40" alt=""></em>
         </div>
-    </ion-content>
+        <i class="icon ion-ios-arrow-right"></i>
+      </a>
+
+
+      <a class="item item-icon-right" href="#">
+        <div class="row row-center">
+          <span>
+            昵称
+          </span>
+          <em>afei</em>
+        </div>
+        <i class="icon ion-ios-arrow-right"></i>
+      </a>
+
+
+      <a class="item item-icon-right" href="#">
+        <div class="row row-center">
+          <span>
+            性别
+          </span>
+          <em>男</em>
+        </div>
+        <i class="icon ion-ios-arrow-right"></i>
+      </a>
+
+
+    </div>
+  </ion-content>
 
 </ion-view>

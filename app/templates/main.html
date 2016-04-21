@@ -1,30 +1,23 @@
-<ion-side-menus>
-    <!-- Center content -->
-    <ion-side-menu-content>
+<ion-tabs class="tabs-light tabs-icon-top">
 
-        <ion-nav-view name="viewContent">
+  <ion-tab title="首页" icon-on="ion-ios-home" icon-off="ion-ios-home-outline" ui-sref="main.index">
+    <ion-nav-view name="index"></ion-nav-view>
+  </ion-tab>
 
-        </ion-nav-view>
-    </ion-side-menu-content>
+  <ion-tab title="超市" icon-on="ion-ios-clock" icon-off="ion-ios-clock-outline" ui-sref="main.store">
+    <ion-nav-view name="store"></ion-nav-view>
+  </ion-tab>
 
-    <!-- Left menu -->
-    <ion-side-menu side="left" class="side-menu">
+  <ion-tab title="拼点货" icon-on="ion-ios-alarm" icon-off="ion-ios-alarm-outline" ui-sref="main.goods">
+    <ion-nav-view name="goods"></ion-nav-view>
+  </ion-tab>
 
-        <ion-header-bar align-title="center" class="bar-positive">
-            <h1 class="title">Side Menu</h1>
-        </ion-header-bar>
+  <ion-tab title="购物车" icon-on="ion-ios-cart" icon-off="ion-ios-cart-outline" ui-sref="main.cart">
+    <ion-nav-view name="cart"></ion-nav-view>
+  </ion-tab>
 
-        <ion-content class="has-header">
-            <div class="list">
-                <a menu-close class="item item-icon-left" ui-sref-active="active" ui-sref="app.home">
-                    <i class="icon ion-home"></i>
-                    Home
-                </a>
-                <a menu-close class="item item-icon-left" ui-sref-active="active" ui-sref="app.settings">
-                    <i class="icon ion-settings"></i>
-                    Settings
-                </a>
-            </div>
-        </ion-content>
-    </ion-side-menu>
-</ion-side-menus>
+  <ion-tab title="我" icon-on="ion-ios-person" icon-off="ion-ios-person-outline" ui-sref="main.my">
+    <ion-nav-view name="my"></ion-nav-view>
+  </ion-tab>
+
+</ion-tabs>

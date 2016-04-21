@@ -27,7 +27,7 @@ var args = require('yargs')
     // remove all debug messages (console.logs, alerts etc) from release build
     .alias('release', 'strip-debug')
     .default('build', false)
-    .default('port', 9000)
+    .default('port', 9008)
     .default('strip-debug', false)
     .argv;
 

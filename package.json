@@ -48,5 +48,9 @@
   },
   "scripts": {
     "gulp": "./node_modules/.bin/gulp"
-  }
+  },
+  "cordovaPlugins": [],
+  "cordovaPlatforms": [
+    "ios"
+  ]
 }

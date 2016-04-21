@@ -12,9 +12,9 @@
 
 angular.module('IonicZjddConsumer', ['ionic', 'ngCordova', 'ngResource'])
 
-  .run(function($ionicPlatform) {
+  .run(function ($ionicPlatform) {
 
-    $ionicPlatform.ready(function() {
+    $ionicPlatform.ready(function () {
       // save to use plugins here
     });
 
@@ -22,42 +22,72 @@ angular.module('IonicZjddConsumer', ['ionic', 'ngCordova', 'ngResource'])
 
   })
 
-  .config(function($httpProvider, $stateProvider, $urlRouterProvider) {
+  .config(function ($httpProvider, $stateProvider, $urlRouterProvider) {
     // register $http interceptors, if any. e.g.
     // $httpProvider.interceptors.push('interceptor-name');
 
     // Application routing
     $stateProvider
-      .state('app', {
-        url: '/app',
+      .state('main', {
+        url: '/main',
         abstract: true,
-        templateUrl: 'templates/main.html',
-        controller: 'MainController'
+        templateUrl: 'templates/main.html'
       })
-      .state('app.home', {
-        url: '/home',
-        cache: true,
+      .state('main.index', {
+        url: '/index',
         views: {
-          'viewContent': {
-            templateUrl: 'templates/views/home.html',
-            controller: 'HomeController'
+          'index': {
+            templateUrl: 'templates/views/index.html',
+            controller: 'IndexCtrl'
           }
         }
       })
-      .state('app.settings', {
+      .state('main.store', {
+        url: '/store',
+        views: {
+          'store': {
+            templateUrl: 'templates/views/store.html',
+            controller: 'StoreCtrl'
+          }
+        }
+      })
+      .state('main.goods', {
+        url: '/goods',
+        views: {
+          'goods': {
+            templateUrl: 'templates/views/goods.html',
+            controller: 'GoodsCtrl'
+          }
+        }
+      })
+      .state('main.cart', {
+        url: '/cart',
+        views: {
+          'cart': {
+            templateUrl: 'templates/views/cart.html',
+            controller: 'CartCtrl'
+          }
+        }
+      })
+      .state('main.my', {
+        url: '/my',
+        views: {
+          'my': {
+            templateUrl: 'templates/views/my.html',
+            controller: 'MyCtrl'
+          }
+        }
+      })
+      .state('settings', {
         url: '/settings',
-        cache: true,
-        views: {
-          'viewContent': {
-            templateUrl: 'templates/views/settings.html',
-            controller: 'SettingsController'
-          }
-        }
+        templateUrl: 'templates/views/settings.html',
+        controller: 'SettingsCtrl',
+        controllerAs:'vm'
       });
 
 
     // redirects to default route for undefined routes
-    $urlRouterProvider.otherwise('/app/home');
+    $urlRouterProvider.otherwise('/main/my');
   });
 
 
