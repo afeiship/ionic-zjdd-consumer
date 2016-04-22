@@ -16,3 +16,6 @@
 + ionic platform add ios
 + ionic build ios
 + ionic emulate ios
+
+##codava api:
++ http://tool.oschina.net/uploads/apidocs/phonegap1.9/index.html
