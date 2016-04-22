@@ -47,7 +47,8 @@ angular.module('IonicZjddConsumer', ['ionic', 'ngCordova', 'ngResource'])
         views: {
           'store': {
             templateUrl: 'templates/views/store.html',
-            controller: 'StoreCtrl'
+            controller: 'StoreCtrl',
+            controllerAs: 'vm'
           }
         }
       })

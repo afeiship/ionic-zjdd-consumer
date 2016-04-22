@@ -1,27 +1,30 @@
-<ion-view  class="slide-left-right">
-    <ion-header-bar align-title="center" class="bar-light">
-    <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
-        <h1 class="title">超市</h1>
-    </ion-header-bar>
+<ion-view id="store_view">
+  <ion-header-bar align-title="center" class="bar-light">
+    <h1 class="title">超市</h1>
+  </ion-header-bar>
 
-    <ion-content>
-        <div class="list">
+  <ion-content>
+    <div class="list info-list">
+      <div class="item item-divider">
+        <i class="ion ion-clock"></i>
+        <span>超市营业时间:09:00-20:00</span>
+      </div>
+    </div>
 
-            <!-- connect toggles to controller using ng-model -->
-
-            <ion-toggle>
-                <span class="settings-item__text">
-                    Allow Push Notifications
-                </span>
-            </ion-toggle>
-
-            <ion-toggle>
-                <span class="settings-item__text">
-                    Allow cookies
-                </span>
-            </ion-toggle>
-
+    <section class="row main-list row-no-padding">
+      <aside class="col categories">
+        <ul>
+          <li ng-repeat="item in vm.categories" data-active={{item.active}} ng-click="vm.itemClick(item)">{{item.name}}</li>
+        </ul>
+      </aside>
+      <div class="col-75 detail">
+        <div class="hd">
+          <a data-active="true" href="#">全部</a>
+          <a href="#">饼干糕点</a>
         </div>
-    </ion-content>
+      </div>
+    </section>
+
+  </ion-content>
 
 </ion-view>

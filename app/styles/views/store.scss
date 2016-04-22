@@ -1,0 +1,61 @@
+/**store Start**/
+#store_view {
+  .scroll{
+    height:100%;
+  }
+  .info-list {
+    margin-bottom: 0;
+    .item {
+      &.item-divider {
+        border: none;
+        color: #666;
+        font-size: 12px;
+      }
+    }
+  }
+
+  .main-list {
+    height:calc(100% - 36px);
+    .categories {
+      background: #eee;
+      li {
+        height: 40px;
+        line-height: 40px;
+        border-left: 5px solid transparent;
+        padding-left:20px;
+        cursor: pointer;
+        user-select: none;
+        &[data-active=true] {
+          border-left-color: #3bc68e;
+          color:#3bc68e;
+          background: #fff;
+        }
+      }
+    }
+
+    .detail{
+      >.hd{
+        height:40px;
+        line-height:40px;
+        overflow-x: scroll;
+        padding:0 10px;
+        >a{
+          text-decoration: none;
+          display: inline-block;
+          height:30px;
+          line-height:30px;
+          background: #eee;
+          color:#666;
+          padding:0 5px;
+
+          &[data-active=true]{
+            color:#3bc68e;
+          }
+        }
+      }
+    }
+
+  }
+}
+
+/**store  End**/
