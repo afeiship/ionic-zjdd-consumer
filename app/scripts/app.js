@@ -102,7 +102,7 @@ angular.module('IonicZjddConsumer', ['ionic', 'ngCordova', 'ngResource'])
 
 
     // redirects to default route for undefined routes
-    $urlRouterProvider.otherwise('/main/my');
+    $urlRouterProvider.otherwise('/main/index');
   });
 
 
