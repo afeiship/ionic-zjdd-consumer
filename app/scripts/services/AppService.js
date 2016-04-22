@@ -8,20 +8,27 @@
  */
 angular.module('IonicZjddConsumer')
   // use factory for services
-  .factory('AppService', function($http, $timeout, $q) {
+  .factory('AppService', function ($http, $timeout, $q) {
 
 
-
-    var getCategory = function() {
+    var getCategory = function () {
       return $http({
-          url: './_mock/category.json',
-          method: 'GET'
-        })
+        url: './_mock/category.json',
+        method: 'GET'
+      });
+    };
+
+    var getDetail = function (inId) {
+      return $http({
+        url: './_mock/detail.json',
+        method: 'GET'
+      });
     };
 
     // public api
     return {
-      getCategory: getCategory
+      getCategory: getCategory,
+      getDetail: getDetail
     };
 
   });

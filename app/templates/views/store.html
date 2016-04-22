@@ -12,15 +12,29 @@
     </div>
 
     <section class="row main-list row-no-padding">
-      <aside class="col categories">
+      <aside class="categories">
         <ul>
-          <li ng-repeat="item in vm.categories" data-active={{item.active}} ng-click="vm.itemClick(item)">{{item.name}}</li>
+          <li ng-repeat="item in vm.categories" data-active={{item.active}} ng-click="vm.itemClick(item)">
+            {{item.name}}
+          </li>
         </ul>
       </aside>
-      <div class="col-75 detail">
+      <div class="col detail">
         <div class="hd">
           <a data-active="true" href="#">全部</a>
           <a href="#">饼干糕点</a>
+        </div>
+        <div class="bd">
+          <ul class="clearfix">
+            <li ng-repeat="item in vm.details">
+              <div class="inner">
+                <img ng-src="{{item.pic}}" alt="">
+
+                <div class="title">{{item.goods_name}}</div>
+                <div class="price"><em>$</em><span>{{item.price}}</span></div>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </section>

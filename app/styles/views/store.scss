@@ -17,6 +17,7 @@
   .main-list {
     height:calc(100% - 36px);
     .categories {
+      width:120px;
       background: #eee;
       li {
         height: 40px;
@@ -50,6 +51,39 @@
 
           &[data-active=true]{
             color:#3bc68e;
+          }
+        }
+      }
+
+      >.bd{
+        ul{
+          li{
+            text-align: center;
+            width:50%;
+            float: left;
+
+            .inner{
+              width:90%;
+            }
+            img{
+              width:80%;
+            }
+            .title{
+              overflow: hidden;
+              white-space:nowrap;
+              text-overflow: ellipsis;
+            }
+            .title,
+            .price{
+
+              height:22px;
+              line-height:22px;
+              text-align: left;
+              padding-left:10px;
+            }
+            .price{
+              color:#999;
+            }
           }
         }
       }

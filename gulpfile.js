@@ -199,6 +199,7 @@ gulp.task('vendor', function () {
 });
 
 gulp.task('mock', function () {
+  console.log('mock');
   return gulp.src('app/_mock/*.json')
     .pipe(gulp.dest('.tmp'));
 });

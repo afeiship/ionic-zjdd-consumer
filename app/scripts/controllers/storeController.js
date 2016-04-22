@@ -10,6 +10,7 @@ angular.module('IonicZjddConsumer')
   .controller('StoreCtrl', function ($scope, AppService) {
     var vm = this;
     vm.categories = [];
+    vm.details=[];
     vm.itemClick = itemClick;
 
     AppService.getCategory().success(function (inResp) {
@@ -18,6 +19,11 @@ angular.module('IonicZjddConsumer')
       vm.categories = list;
     });
 
+
+    AppService.getDetail(1).success(function(inResp){
+      var list=inResp.data.list;
+      vm.details=list;
+    });
 
     function itemClick(inItem) {
       vm.categories.forEach(function(item){
