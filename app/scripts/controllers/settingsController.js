@@ -7,9 +7,15 @@
  * # SettingsController
  */
 angular.module('IonicZjddConsumer')
-  .controller('SettingsCtrl', function ($scope, $ionicActionSheet) {
+  .controller('SettingsCtrl', function ($scope, $ionicActionSheet,$ionicHistory) {
     var vm = this;
     vm.showModal = showModal;
+    vm.back=back;
+
+
+    function back(){
+      $ionicHistory.goBack();
+    }
 
     function showModal() {
 

@@ -7,13 +7,15 @@
  * # SettingsController
  */
 angular.module('IonicZjddConsumer')
-  .controller('MyCtrl', function ($scope,$state) {
+  .controller('ModifyNicknameCtrl', function ($scope,$state,$ionicHistory) {
     var vm=this;
-    vm.toSettings=toSettings;
+    vm.back=back;
 
-    function toSettings(){
-      //$state.go('settings');
+
+    function back(){
+      $ionicHistory.goBack();
     }
+
     // do something with $scope
 
   });

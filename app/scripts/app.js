@@ -74,15 +74,30 @@ angular.module('IonicZjddConsumer', ['ionic', 'ngCordova', 'ngResource'])
         views: {
           'my': {
             templateUrl: 'templates/views/my.html',
-            controller: 'MyCtrl'
+            controller: 'MyCtrl',
+            controllerAs: 'vm'
           }
         }
       })
-      .state('settings', {
+      .state('main.settings', {
         url: '/settings',
-        templateUrl: 'templates/views/settings.html',
-        controller: 'SettingsCtrl',
-        controllerAs:'vm'
+        views: {
+          'my': {
+            templateUrl: 'templates/views/settings.html',
+            controller: 'SettingsCtrl',
+            controllerAs: 'vm'
+          }
+        }
+      })
+      .state('main.nickname', {
+        url: '/nickname',
+        views: {
+          'my': {
+            templateUrl: 'templates/views/modify-nickname.html',
+            controller: 'ModifyNicknameCtrl',
+            controllerAs: 'vm'
+          }
+        }
       });
 
 

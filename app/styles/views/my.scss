@@ -6,10 +6,41 @@
   margin-bottom:0 !important;
 }
 #my-view{
+
+  header{
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cdeb8e+0,a5c956+100;Green+3D+%232 */
+    background: #cdeb8e; /* Old browsers */
+    background: -moz-linear-gradient(-45deg,  #cdeb8e 0%, #3bc68e 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg,  #cdeb8e 0%,#3bc68e 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg,  #cdeb8e 0%,#3bc68e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cdeb8e', endColorstr='#3bc68e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+    .list{
+      a{
+        background: none;
+      }
+    }
+  }
+  .info-list{
+    margin-bottom:0;
+    border-top: none;
+    .item{
+      border-bottom-color:rgba(255,255,255,0.3);
+    }
+    .icon{
+      font-size:18px;
+      right:0;
+      color:#666;
+    }
+  }
   .share-list{
     .col{
       span,i{
+        color:#fff;
         display: block;
+      }
+      span{
+        font-size:12px;
       }
       .icon{
         font-size:24px;
@@ -20,11 +51,19 @@
     .item{
       color:#666;
       padding:10px;
-      padding-left:40px;
+      padding-left:30px;
+      font-size:14px;
 
       &.item-icon-right{
         .icon{
           right:0;
+        }
+      }
+
+      &.item-icon-left{
+        .icon:first-child{
+          left:4px;
+          font-size:14px;
         }
       }
     }
@@ -34,7 +73,8 @@
     }
 
     .icon{
-      font-size:18px;
+      font-size:16px;
+      color:#999;
     }
 
     .button{
