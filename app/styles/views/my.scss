@@ -5,8 +5,10 @@
 .no-margin-bottom{
   margin-bottom:0 !important;
 }
+
 #my-view{
 
+  background: #f5f5f5;
   header{
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cdeb8e+0,a5c956+100;Green+3D+%232 */
     background: #cdeb8e; /* Old browsers */
@@ -94,6 +96,8 @@
 
     .button{
       color:#f00;
+      margin:0;
+      background: #fff;
     }
   }
 

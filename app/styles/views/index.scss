@@ -2,20 +2,9 @@
 #index_view {
   .slider-slides {
     .box {
-      height: 120px;
-      h1 {
-        text-align: center;
-        color: #fff;
-        line-height: 120px;
-      }
-      &.blue {
-        background: #387ef5;
-      }
-      &.yellow {
-        background: #ffc900;
-      }
-      &.pink {
-        background: #886aea;
+      img{
+        width:100%;
+        display: block;
       }
     }
   }
