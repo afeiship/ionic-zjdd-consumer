@@ -2,13 +2,20 @@
 #locator_view {
   background: #f5f5f5;
   .top-search-input {
-
   }
 
   .district-list {
     .item {
+
+      &.item-icon-right {
+        .icon {
+          &:last-child {
+            right: 0;
+          }
+        }
+      }
       .row {
-        width:88%;
+        width: 88%;
         .name {
         }
         .distance {

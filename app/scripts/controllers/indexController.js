@@ -16,6 +16,11 @@ angular.module('IonicZjddConsumer')
     vm.newList = [];
     vm.recommendList = [];
     vm.hotList = [];
+    $scope.itemClick = itemClick;
+    $scope.districtItem = {
+      name: '点点设计店',
+      distance: 0.1
+    };
 
     $scope.locator = {
       keywords: '',
@@ -60,12 +65,18 @@ angular.module('IonicZjddConsumer')
       $scope.$apply('scrollOpacity');
     }
 
+    function itemClick(inItem) {
+      $scope.districtItem = inItem;
+      $scope.closeModal();
+      //$scope.$apply('districtItem');
+    }
+
 
     function showLocator() {
 
       $ionicModal.fromTemplateUrl('templates/views/locator.html', {
         scope: $scope,
-        animation: 'slide-in-up'
+        animation: 'slide-in-up'/*slide-in-up|slide-left-right-ios7|fade-in-out*/
       }).then(function (modal) {
         $scope.modal = modal;
         $scope.modal.show();

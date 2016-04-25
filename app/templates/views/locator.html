@@ -29,7 +29,7 @@
 
     <div class="list district-list common-items">
 
-      <a class="item item-icon-right" href="javascript:;" ng-repeat="item in locator.items">
+      <a class="item item-icon-right" href="javascript:;" ng-repeat="item in locator.items" ng-click="itemClick(item)">
         <div class="row row-no-padding">
           <span class="col name">
             {{item.name}}
