@@ -55,61 +55,181 @@
     </ion-slide-box>
 
 
-    <div class="list card">
+    <section class="assertive white-bg marquee-notice">
+      <i class="icon ion ion-volume-medium"></i>
+      <span>欢迎光临小区!</span>
+    </section>
 
-      <div class="item item-avatar">
-        <img src="images/zjdd-rect-logo.png">
 
-        <h2>Marty McFly</h2>
+    <section class="row white-bg text-center special-list">
+      <a class="col">
+        <i class="ion balanced ion-bag"></i>
+        <span>特价专区</span>
+      </a>
+      <a class="col">
+        <i class="ion assertive ion-ios-alarm-outline"></i>
+        <span>每日签到</span>
+      </a>
+      <a class="col">
+        <i class="ion positive ion-cash"></i>
+        <span>优惠券</span>
+      </a>
+      <a class="col">
+        <i class="ion royal ion-coffee"></i>
+        <span>快递</span>
+      </a>
+    </section>
 
-        <p>November 05, 1955</p>
+
+    <section class="box margin-vertical">
+      <header class="box-header">
+        <i class="icon balanced ion ion-leaf"></i>
+        <span>舒适生活</span>
+      </header>
+      <div class="box-body">
+        <img src="images/index_sp_afternoon.png" class="w100" alt="">
       </div>
+    </section>
 
-      <div class="item item-body">
-        <img class="full-image" src="images/delorean.jpg">
 
-        <p>
-          This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
-          the content is from a card-body consisting of an image and paragraph text. The footer
-          consists of tabs, icons aligned left, within the card-footer.
-        </p>
+    <section class="box margin-vertical">
+      <header class="box-header">
+        <div class="row row-no-padding">
+          <div class="col">
+            <i class="icon assertive ion ion-flag"></i>
+            <span>小店上新</span>
+          </div>
+          <div class="col text-right">
+            <span>更多</span>
+            <i class="ion ion-ios-arrow-right"></i>
+          </div>
+        </div>
 
-        <p>
-          <a href="#" class="subdued">1 Like</a>
-          <a href="#" class="subdued">5 Comments</a>
-        </p>
+      </header>
+      <div class="box-body">
+        <ul class="cf">
+          <li class="goods-item" ng-repeat="item in vm.newList">
+            <img ng-src="{{item.pic}}" alt="">
+
+            <p class="name">
+              {{item.goods_name}}
+            </p>
+
+            <p class="c9 spec">
+              {{item.spec}}
+            </p>
+
+            <p class="price">
+              {{item.price | currency:'$'}}
+            </p>
+
+            <div class="text-left goods-item-spinner">
+              <div class="spinner-body col-90">
+                <span class="minus">-</span>
+                <span class="value">0</span>
+                <span class="plus">+</span>
+              </div>
+            </div>
+          </li>
+        </ul>
       </div>
+    </section>
 
-    </div>
 
+    <section class="box margin-vertical">
+      <header class="box-header">
+        <div class="row row-no-padding">
+          <div class="col">
+            <i class="icon balanced ion ion-thumbsup"></i>
+            <span>掌柜推荐</span>
+          </div>
+          <div class="col text-right">
+            <span>更多</span>
+            <i class="ion ion-ios-arrow-right"></i>
+          </div>
+        </div>
 
-    <div class="list card">
+      </header>
+      <div class="box-body">
+        <ul class="cf">
+          <li class="goods-item" ng-repeat="item in vm.recommendList">
+            <img ng-src="{{item.pic}}" alt="">
 
-      <div class="item item-avatar">
-        <img src="images/mcfly.jpg">
+            <p class="name">
+              {{item.goods_name}}
+            </p>
 
-        <h2>Marty McFly</h2>
+            <p class="c9 spec">
+              {{item.spec}}
+            </p>
 
-        <p>November 05, 1955</p>
+            <p class="price">
+              {{item.price | currency:'$'}}
+            </p>
+
+            <div class="text-left goods-item-spinner">
+              <div class="spinner-body col-90">
+                <span class="minus">-</span>
+                <span class="value">0</span>
+                <span class="plus">+</span>
+              </div>
+            </div>
+          </li>
+        </ul>
       </div>
+    </section>
 
-      <div class="item item-body">
-        <img class="full-image" src="images/delorean.jpg">
 
-        <p>
-          This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
-          the content is from a card-body consisting of an image and paragraph text. The footer
-          consists of tabs, icons aligned left, within the card-footer.
-        </p>
+    <section class="box margin-top">
+      <header class="box-header">
+        <div class="row row-no-padding">
+          <div class="col">
+            <i class="icon assertive ion ion-flame"></i>
+            <span>小店热卖</span>
+          </div>
+          <div class="col text-right">
+            <span>更多</span>
+            <i class="ion ion-ios-arrow-right"></i>
+          </div>
+        </div>
 
-        <p>
-          <a href="#" class="subdued">1 Like</a>
-          <a href="#" class="subdued">5 Comments</a>
-        </p>
+      </header>
+      <div class="box-body">
+        <ul class="cf">
+          <li class="goods-item" ng-repeat="item in vm.hotList">
+            <img ng-src="{{item.pic}}" alt="">
+
+            <p class="name">
+              {{item.goods_name}}
+            </p>
+
+            <p class="c9 spec">
+              {{item.spec}}
+            </p>
+
+            <p class="price">
+              {{item.price | currency:'$'}}
+            </p>
+
+            <div class="text-left goods-item-spinner">
+              <div class="spinner-body col-90">
+                <span class="minus">-</span>
+                <span class="value">0</span>
+                <span class="plus">+</span>
+              </div>
+            </div>
+          </li>
+        </ul>
       </div>
+    </section>
 
-    </div>
 
+    <footer class="balanced padding text-center" ui-sref="main.store">
+      <span>
+        查看更多商品
+      </span>
+      <i class="icon ion ion-ios-arrow-right"></i>
+    </footer>
 
   </ion-content>
 

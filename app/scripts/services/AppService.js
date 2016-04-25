@@ -25,10 +25,18 @@ angular.module('IonicZjddConsumer')
       });
     };
 
+    var getIndexList=function(){
+      return $http({
+        url: './_mock/index_list.json',
+        method: 'GET'
+      });
+    };
+
     // public api
     return {
       getCategory: getCategory,
-      getDetail: getDetail
+      getDetail: getDetail,
+      getIndexList: getIndexList
     };
 
   });

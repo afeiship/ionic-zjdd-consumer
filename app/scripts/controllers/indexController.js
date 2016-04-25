@@ -7,12 +7,15 @@
  * # SettingsController
  */
 angular.module('IonicZjddConsumer')
-  .controller('IndexCtrl', function ($scope, $ionicScrollDelegate, $ionicModal) {
+  .controller('IndexCtrl', function ($scope, $ionicScrollDelegate, $ionicModal, AppService) {
     var vm = this;
     var handle = $ionicScrollDelegate.$getByHandle('indexIonContent');
     vm.onContentScroll = onContentScroll;
     vm.showLocator = showLocator;
     vm.scrollOpacity = 0;
+    vm.newList = [];
+    vm.recommendList = [];
+    vm.hotList = [];
 
     $scope.locator = {
       keywords: '',
@@ -31,6 +34,18 @@ angular.module('IonicZjddConsumer')
         }
       ]
     };
+
+
+    init();
+
+    function init() {
+      AppService.getIndexList().success(function (inResp) {
+        var data = inResp.data;
+        vm.newList = data['new'];
+        vm.recommendList = data['recommend'];
+        vm.hotList = data['hot'];
+      });
+    }
 
 
     function onContentScroll($event) {
