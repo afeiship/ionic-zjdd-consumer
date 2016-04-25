@@ -16,6 +16,21 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cdeb8e', endColorstr='#3bc68e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
     .list{
+      >.item{
+        margin:10px 0;
+        border-top:none;
+        &.item-avatar{
+          padding-left:80px;
+        }
+        >img{
+          max-width:50px;
+          max-height:50px;
+          border:1px solid darken(#3bc68e,10%);
+        }
+        >*{
+          color:#fff;
+        }
+      }
       a{
         background: none;
       }

@@ -200,6 +200,7 @@ gulp.task('vendor', function () {
 
 gulp.task('mock', function () {
   return gulp.src('app/_mock/*.json')
+    .pipe(gulp.dest('www/_mock'))
     .pipe(gulp.dest('.tmp/_mock'));
 });
 
@@ -301,6 +302,7 @@ gulp.task('watchers', function () {
   gulp.watch('app/icons/**', ['iconfont']);
   gulp.watch('app/images/**', ['images']);
   gulp.watch('app/scripts/**/*.js', ['index']);
+  gulp.watch('app/mock/**/*.json', ['mock']);
   gulp.watch('./bower.json', ['vendor']);
   gulp.watch('app/templates/**/*.html', ['index']);
   gulp.watch('app/index.html', ['index']);
