@@ -7,23 +7,12 @@
 @import "_variables";
 @import "_fonts";
 
-/**
- * LAYOUT
- */
-
-@import "layout/layout";
-
-
-/**
- * MENU
- */
-
-@import "menu/menu";
 
 /**
  * VIEWS
  */
 
+@import "views/common";
 @import "views/home";
 @import "views/my";
 @import "views/setttings";
@@ -31,3 +20,4 @@
 @import "views/cart";
 @import "views/index";
 @import "views/store";
+@import "views/locator";

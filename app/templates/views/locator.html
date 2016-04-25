@@ -1,0 +1,50 @@
+<ion-modal-view id="locator_view">
+  <ion-header-bar align-title="center" class="bar-light">
+    <button class="button button-clear" ng-click="closeModal()">取消</button>
+    <h1 class="title">选择小区</h1>
+    <button class="button button-clear">手动选择</button>
+  </ion-header-bar>
+
+
+  <ion-content>
+
+    <div class="bar bar-header item-input-inset">
+      <label class="item-input-wrapper">
+        <i class="icon ion-ios-search placeholder-icon"></i>
+        <input type="search" placeholder="输入小区名称" ng-model="locator.keywords">
+      </label>
+
+      <button class="button button-positive button-clear">
+        搜索
+      </button>
+    </div>
+
+
+    <div class="row row-center white-bg margin-vertical text-center">
+      <div class="col col-center">
+        <i class="ion balanced ion-ios-location"></i>
+        <span>定位成功,请选择你的小区</span>
+      </div>
+    </div>
+
+    <div class="list district-list common-items">
+
+      <a class="item item-icon-right" href="javascript:;" ng-repeat="item in locator.items">
+        <div class="row row-no-padding">
+          <span class="col name">
+            {{item.name}}
+          </span>
+          <span class="col assertive distance">
+            距离{{item.distance}}km
+          </span>
+        </div>
+        <i class="icon ion-ios-arrow-right"></i>
+      </a>
+
+    </div>
+
+
+  </ion-content>
+
+
+</ion-modal-view>

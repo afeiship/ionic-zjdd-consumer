@@ -1,13 +1,64 @@
 /**index Start**/
 #index_view {
+
+  ion-header-bar {
+    background: none;
+    position: relative;
+    border:none;
+    >*{
+      z-index:2;
+    }
+
+    .bg-opacity {
+      background: $balanced;
+      position: absolute;
+      left:0;top:0;
+      right:0;bottom:0;
+      z-index:0;
+      //opacity:0;
+    }
+
+    .locator{
+      display: inline-block;
+      border-radius: 100px;
+      background: rgba(#333,0.4);
+      height:22px;
+      line-height:22px;
+      padding:0 10px;
+
+      &:active{
+        background: rgba(#333,0.2);
+      }
+    }
+
+    .row{
+      height:44px;
+      line-height:44px;
+      padding:0 20px;
+      .icons{
+        font-size:22px;
+        i{
+          margin-left:5px;
+        }
+      }
+    }
+  }
+
+  ion-content {
+    &.has-header {
+      top: 0;
+    }
+  }
+
   .slider-slides {
     .box {
-      img{
-        width:100%;
+      img {
+        width: 100%;
         display: block;
       }
     }
   }
+
 }
 
 /**index  End**/

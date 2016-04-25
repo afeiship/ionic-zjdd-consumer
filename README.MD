@@ -19,3 +19,4 @@
 
 ##codava api:
 + http://tool.oschina.net/uploads/apidocs/phonegap1.9/index.html
++ http://ngcordova.com/

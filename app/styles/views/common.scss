@@ -1,10 +1,37 @@
 /**common Start**/
 
-.list{
-  .item{
-    border-color:#f5f5f5;
+.list {
+  &.common-items {
+    .item {
+      padding: 10px;
+      border-color: #f5f5f5;
+
+      &.item-icon-right {
+        .icon {
+          font-size: 16px;
+          color: #999;
+        }
+      }
+    }
   }
 }
 
+.pane {
+  background: #f5f5f5;
+}
+
+.white-bg {
+  background: #fff;
+}
+
+.margin-vertical {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.margin-horizontal {
+  margin-left: 10px;
+  margin-right: 10px;
+}
 
 /**common  End**/

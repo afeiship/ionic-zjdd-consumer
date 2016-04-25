@@ -16,6 +16,10 @@ angular.module('IonicZjddConsumer', ['ionic', 'ngCordova', 'ngResource'])
 
     $ionicPlatform.ready(function () {
       // save to use plugins here
+      ionic.Platform.fullScreen();
+      if (window.StatusBar) {
+        return StatusBar.hide();
+      }
     });
 
     // add possible global event handlers here
@@ -38,7 +42,18 @@ angular.module('IonicZjddConsumer', ['ionic', 'ngCordova', 'ngResource'])
         views: {
           'index': {
             templateUrl: 'templates/views/index.html',
-            controller: 'IndexCtrl'
+            controller: 'IndexCtrl',
+            controllerAs: 'vm'
+          }
+        }
+      })
+      .state('main.locator', {
+        url: '/locator',
+        views: {
+          'index': {
+            templateUrl: 'templates/views/locator.html',
+            controller: 'LocatorCtrl',
+            controllerAs: 'vm'
           }
         }
       })

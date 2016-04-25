@@ -1,9 +1,26 @@
 <ion-view id="index_view">
-  <ion-header-bar align-title="center" class="bar-light">
-    <h1 class="title">首页</h1>
+  <ion-header-bar align-title="center" class="bar-balanced no-padding">
+
+    <div class="row row-no-padding">
+      <div class="col">
+        <div class="locator" ng-click="vm.showLocator()">
+          <span>华悦家园</span>
+          <i class="ion ion-arrow-down-b"></i>
+        </div>
+      </div>
+      <div class="col icons text-right">
+        <span class="chat">
+          <i class="ion ion-ios-chatbubble-outline"></i>
+        </span>
+        <span class="search">
+          <i class="ion ion-ios-search-strong"></i>
+        </span>
+      </div>
+    </div>
+    <span class="bg-opacity" ng-style="{opacity:vm.scrollOpacity}"></span>
   </ion-header-bar>
 
-  <ion-content>
+  <ion-content delegate-handle="indexIonContent" on-scroll="vm.onContentScroll()">
     <ion-slide-box does-continue="true">
       <ion-slide>
         <div class="box">
@@ -38,22 +55,25 @@
     </ion-slide-box>
 
 
-
     <div class="list card">
 
       <div class="item item-avatar">
         <img src="images/zjdd-rect-logo.png">
+
         <h2>Marty McFly</h2>
+
         <p>November 05, 1955</p>
       </div>
 
       <div class="item item-body">
         <img class="full-image" src="images/delorean.jpg">
+
         <p>
           This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
           the content is from a card-body consisting of an image and paragraph text. The footer
           consists of tabs, icons aligned left, within the card-footer.
         </p>
+
         <p>
           <a href="#" class="subdued">1 Like</a>
           <a href="#" class="subdued">5 Comments</a>
@@ -67,17 +87,21 @@
 
       <div class="item item-avatar">
         <img src="images/mcfly.jpg">
+
         <h2>Marty McFly</h2>
+
         <p>November 05, 1955</p>
       </div>
 
       <div class="item item-body">
         <img class="full-image" src="images/delorean.jpg">
+
         <p>
           This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
           the content is from a card-body consisting of an image and paragraph text. The footer
           consists of tabs, icons aligned left, within the card-footer.
         </p>
+
         <p>
           <a href="#" class="subdued">1 Like</a>
           <a href="#" class="subdued">5 Comments</a>
