@@ -16,7 +16,7 @@ var runSequence = require('run-sequence');
 var merge = require('merge-stream');
 var ripple = require('ripple-emulator');
 var wiredep = require('wiredep');
-
+var angularFilesort = require('gulp-angular-filesort');
 /**
  * Parse arguments
  */
@@ -68,7 +68,7 @@ gulp.task('styles', function () {
 
   var options = build ? {style: 'compressed'} : {style: 'expanded'};
 
-  var sassStream = gulp.src('app/styles/main.scss')
+  var sassStream = gulp.src([ 'app/styles/main.scss'])
     .pipe(plugins.sass(options))
     .on('error', function (err) {
       console.log('err: ', err);
@@ -129,7 +129,6 @@ gulp.task('scripts', function () {
     .pipe(plugins.if(build, plugins.concat('app.js')))
     .pipe(plugins.if(build, plugins.uglify()))
     .pipe(plugins.if(build && !emulate, plugins.rev()))
-
     .pipe(gulp.dest(dest))
 
     .on('error', errorHandler);
@@ -223,7 +222,8 @@ gulp.task('index', ['jsHint', 'scripts'], function () {
   // in development mode, it's better to add each file seperately.
   // it makes debugging easier.
   var _getAllScriptSources = function () {
-    var scriptStream = gulp.src(['scripts/app.js', 'scripts/**/*.js'], {cwd: targetDir});
+    var scriptStream = gulp.src(['scripts/app.js', 'scripts/**/*.js'], {cwd: targetDir})
+      .pipe(angularFilesort());
     return streamqueue({objectMode: true}, scriptStream);
   };
 
