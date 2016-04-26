@@ -12,7 +12,10 @@
 
 angular.module('IonicZjddConsumer', ['ionic', 'ngCordova', 'ngResource'])
 
-  .run(function ($ionicPlatform) {
+  .run(function ($ionicPlatform, $rootScope) {
+
+    $rootScope.cartItems = [];
+    $rootScope.cartBadges = 0;
 
     $ionicPlatform.ready(function () {
       // save to use plugins here

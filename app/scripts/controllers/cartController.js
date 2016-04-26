@@ -7,7 +7,9 @@
  * # SettingsController
  */
 angular.module('IonicZjddConsumer')
-  .controller('CartCtrl', function ($scope) {
+  .controller('CartCtrl', function ($scope, $rootScope) {
+
+    var vm = this;
 
     // do something with $scope
 

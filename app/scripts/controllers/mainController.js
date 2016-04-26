@@ -7,8 +7,8 @@
  * # MainController
  */
 angular.module('IonicZjddConsumer')
-  .controller('MainController', function($scope) {
+  .controller('MainController', function ($scope, $rootScope) {
 
-    // do something with $scope
+    var vm = this;
 
   });

@@ -7,7 +7,7 @@
  * # SettingsController
  */
 angular.module('IonicZjddConsumer')
-  .controller('IndexCtrl', function ($scope, $ionicScrollDelegate, $ionicModal, AppService) {
+  .controller('IndexCtrl', function ($scope, $rootScope, $ionicScrollDelegate, $ionicModal, AppService) {
     var vm = this;
     var handle = $ionicScrollDelegate.$getByHandle('indexIonContent');
     vm.onContentScroll = onContentScroll;
@@ -43,12 +43,21 @@ angular.module('IonicZjddConsumer')
 
     init();
 
+
+    $scope.$watch(function () {
+      return vm.newList;
+    }, function (newValue, oldValue) {
+      $rootScope.cartItems = getActiveItems(newValue);
+      updateBadges();
+    }, true);
+
+
     function init() {
       AppService.getIndexList().success(function (inResp) {
         var data = inResp.data;
-        vm.newList = data['new'];
-        vm.recommendList = data['recommend'];
-        vm.hotList = data['hot'];
+        vm.newList = processNumberList(data['new']);
+        vm.recommendList = processNumberList(data['recommend']);
+        vm.hotList = processNumberList(data['hot']);
       });
     }
 
@@ -68,7 +77,14 @@ angular.module('IonicZjddConsumer')
     function itemClick(inItem) {
       $scope.districtItem = inItem;
       $scope.closeModal();
-      //$scope.$apply('districtItem');
+    }
+
+
+    function processNumberList(inData) {
+      return inData.map(function (item) {
+        item.__ui_value__ = 0;
+        return item;
+      });
     }
 
 
@@ -101,6 +117,22 @@ angular.module('IonicZjddConsumer')
       $scope.$on('modal.removed', function () {
         // Execute action
       });
+    }
+
+
+    function getActiveItems(inItems) {
+      return inItems.filter(function (item) {
+        return item.__ui_value__ > 0;
+      });
+    }
+
+    function updateBadges() {
+      var items = $rootScope.cartItems;
+      var length = 0;
+      items.forEach(function (item) {
+        length += item.__ui_value__;
+      });
+      $rootScope.cartBadges=length;
     }
 
   });
