@@ -54,7 +54,6 @@
 
     </ion-slide-box>
 
-
     <section class="assertive white-bg marquee-notice">
       <i class="icon ion ion-volume-medium"></i>
       <span>欢迎光临小区!</span>
@@ -120,15 +119,11 @@
             </p>
 
             <p class="price">
-              {{item.price | currency:'$'}}
+              {{item.price | currency:'￥'}} 元
             </p>
 
-            <div class="text-left goods-item-spinner">
-              <div class="spinner-body col-90">
-                <span class="minus">-</span>
-                <span class="value">0</span>
-                <span class="plus">+</span>
-              </div>
+            <div class="text-left">
+              <number-spinner class="col-90"></number-spinner>
             </div>
           </li>
         </ul>
@@ -164,15 +159,11 @@
             </p>
 
             <p class="price">
-              {{item.price | currency:'$'}}
+              {{item.price | currency:'￥'}} 元
             </p>
 
-            <div class="text-left goods-item-spinner">
-              <div class="spinner-body col-90">
-                <span class="minus">-</span>
-                <span class="value">0</span>
-                <span class="plus">+</span>
-              </div>
+            <div class="text-left">
+              <number-spinner class="col-90"></number-spinner>
             </div>
           </li>
         </ul>
@@ -208,15 +199,11 @@
             </p>
 
             <p class="price">
-              {{item.price | currency:'$'}}
+              {{item.price | currency:'￥'}} 元
             </p>
 
-            <div class="text-left goods-item-spinner">
-              <div class="spinner-body col-90">
-                <span class="minus">-</span>
-                <span class="value">0</span>
-                <span class="plus">+</span>
-              </div>
+            <div class="text-left">
+              <number-spinner class="col-90"></number-spinner>
             </div>
           </li>
         </ul>
