@@ -3,7 +3,7 @@
     <h1 class="title">购物车</h1>
   </ion-header-bar>
 
-  <ion-content class="has-footer">
+  <ion-content scrollbar-y="false" class="has-footer">
     <section class="text-center row row-center" ng-if="vm.root.cartItems.length<=0">
       <div class="col col-80 auto col-center">
         <i class="icon ion ion-ios-body-outline"></i>
@@ -16,9 +16,7 @@
 
     <div class="has-list" ng-if="vm.cartItems.length>0">
 
-
       <ion-list>
-
         <ion-item class="item item-thumbnail-left" ng-repeat="item in vm.root.cartItems" ng-if="!!item.__ui_value__">
           <img ng-src="{{item.pic}}">
 
@@ -31,7 +29,7 @@
               {{item.price | currency:'￥'}} 元
             </span>
             <span class="col text-right">
-              <number-spinner class="col-90" value="item.__ui_value__"></number-spinner>
+              <number-spinner value="item.__ui_value__"></number-spinner>
             </span>
           </div>
           <ion-option-button class="button-assertive" ng-click="vm.del(item)">删除</ion-option-button>
