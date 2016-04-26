@@ -16,6 +16,7 @@ angular.module('IonicZjddConsumer', ['ionic', 'ngCordova', 'ngResource'])
 
     $rootScope.cartItems = [];
     $rootScope.cartBadges = 0;
+    $rootScope.total = 0;
     console.log('run once');
 
     $ionicPlatform.ready(function () {

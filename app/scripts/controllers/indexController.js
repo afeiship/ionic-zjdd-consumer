@@ -7,7 +7,7 @@
  * # SettingsController
  */
 angular.module('IonicZjddConsumer')
-  .controller('IndexCtrl', function ($scope, $rootScope, $ionicScrollDelegate, $ionicLoading, $ionicModal,$timeout, AppService) {
+  .controller('IndexCtrl', function ($scope, $rootScope, $ionicScrollDelegate, $ionicLoading, $ionicModal, $timeout, AppService) {
     var vm = this;
     var handle = $ionicScrollDelegate.$getByHandle('indexIonContent');
     vm.onContentScroll = onContentScroll;
@@ -102,9 +102,9 @@ angular.module('IonicZjddConsumer')
 
 
         //todo:abstracto to common setting.
-        $timeout(function(){
+        $timeout(function () {
           $ionicLoading.hide();
-        },1000);
+        }, 1000);
       });
 
 
@@ -136,12 +136,17 @@ angular.module('IonicZjddConsumer')
     }
 
     function updateBadges() {
+      var val;
       var items = $rootScope.cartItems;
       var length = 0;
+      var total = 0;
       items.forEach(function (item) {
-        length += item.__ui_value__;
+        val = item.__ui_value__;
+        length += val;
+        total += val * item.price;
       });
       $rootScope.cartBadges = length;
+      $rootScope.total = total;
     }
 
   });

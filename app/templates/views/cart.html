@@ -44,12 +44,12 @@
 
   </ion-content>
 
-  <footer class="bar no-padding bar-footer"  ng-if="vm.root.cartItems.length>0">
+  <footer class="bar no-padding bar-footer" ng-if="vm.root.cartItems.length>0">
     <div class="row row-no-padding">
       <div class="col margin-horizontal col-center">
         <div class="block" style="margin-top:3px;">
           <span class="f12">合计:</span>
-          <em class="assertive" style="font-size: 20px;">￥43.4</em>
+          <em class="assertive" style="font-size: 20px;">{{vm.root.total | currency:'￥'}}</em>
         </div>
         <div class="c9 f10 block tip">
           免运费
