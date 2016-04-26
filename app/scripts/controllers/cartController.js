@@ -10,7 +10,19 @@ angular.module('IonicZjddConsumer')
   .controller('CartCtrl', function ($scope, $rootScope) {
 
     var vm = this;
+    vm.del=del;
 
-    // do something with $scope
+    vm.cartItems=($rootScope.cartItems);
+
+    function del(inItem){
+      var items=angular.copy(vm.cartItems);
+      vm.cartItems.forEach(function(item,index){
+        if(item.id===inItem.id){
+          items.splice(index,1);
+        }
+      });
+      vm.cartItems=items;
+    }
+
 
   });

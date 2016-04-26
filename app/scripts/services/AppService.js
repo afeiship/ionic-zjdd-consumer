@@ -8,7 +8,7 @@
  */
 angular.module('IonicZjddConsumer')
   // use factory for services
-  .factory('AppService', function ($http, $timeout, $q) {
+  .factory('AppService', function ($http, $timeout, $q,$rootScope) {
 
 
     var getCategory = function () {

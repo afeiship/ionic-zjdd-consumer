@@ -1,16 +1,67 @@
-<ion-view id="cart_view">
+<ion-view id="cart_view" cache-view="false" class="has-footer">
   <ion-header-bar align-title="center" class="bar-light">
     <h1 class="title">购物车</h1>
   </ion-header-bar>
 
-  <ion-content>
-    <section class="text-center row row-center">
+  <ion-content class="has-footer">
+    <section class="text-center row row-center" ng-if="vm.cartItems.length<=0">
       <div class="col col-center">
         <i class="icon ion ion-ios-body-outline"></i>
+
         <p class="c9">世界很大,等我吃饱了再说</p>
         <button class="button button-balanced button-block" ui-sref="main.store">去逛逛</button>
       </div>
     </section>
+
+
+    <div class="has-list" ng-if="vm.cartItems.length>0">
+
+
+      <ion-list>
+
+        <ion-item class="item item-thumbnail-left" href="#" ng-repeat="item in vm.cartItems" ng-if="!!item.__ui_value__">
+          <img ng-src="{{item.pic}}">
+
+          <h2>{{item.goods_name}}</h2>
+
+          <p>{{item.spec}}</p>
+
+          <div class="row row-no-padding">
+            <span class="col">
+              {{item.price | currency:'￥'}} 元
+            </span>
+            <span class="col text-right">
+              <number-spinner class="col-90" value="item.__ui_value__"></number-spinner>
+            </span>
+          </div>
+          <ion-option-button class="button-assertive" ng-click="vm.del(item)">删除</ion-option-button>
+        </ion-item>
+      </ion-list>
+
+
+    </div>
+
+
   </ion-content>
+
+  <footer class="bar no-padding bar-footer"  ng-if="vm.cartItems.length>0">
+    <div class="row row-no-padding">
+      <div class="col margin-horizontal col-center">
+        <div class="block">
+          <span>合计:</span>
+          <em class="assertive" style="font-size: 20px;">￥43.4</em>
+        </div>
+        <div class="c9 f10 block tip">
+          免运费
+        </div>
+      </div>
+      <div class="col text-center balanced col-center">
+        再选择购
+      </div>
+      <div class="col col-center">
+        <button class="button f14 button-balanced button-full">结算</button>
+      </div>
+    </div>
+  </footer>
 
 </ion-view>

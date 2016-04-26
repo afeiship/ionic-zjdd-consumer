@@ -106,6 +106,16 @@
   }
 }
 
+.f10{
+  font-size:10px;
+}
+.f12{
+  font-size:12px;
+}
+.f14{
+  font-size:14px;
+}
+
 .goods-item-spinner {
   .spinner-body {
     background: #f5f5f5;
@@ -171,6 +181,12 @@
 .slide-in-right.ng-leave,
 .slide-in-right > .ng-leave {
   transition: all ease-in-out 250ms;
+}
+
+.has-footer{
+  .bar-footer{
+    bottom:49px;
+  }
 }
 
 /**common  End**/

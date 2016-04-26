@@ -11,5 +11,28 @@
       color: #eee;
     }
   }
+
+  .list{
+    .item{
+      &:first-child{
+        border: none;
+      }
+    }
+  }
+
+  .bar-footer{
+    height:48px;
+    .tip{
+    }
+
+    .col{
+      &:last-child{
+        height:100%;
+        .button{
+          height:48px;
+        }
+      }
+    }
+  }
 }
 /**cart  End**/

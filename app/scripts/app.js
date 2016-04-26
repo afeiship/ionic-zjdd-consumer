@@ -16,6 +16,7 @@ angular.module('IonicZjddConsumer', ['ionic', 'ngCordova', 'ngResource'])
 
     $rootScope.cartItems = [];
     $rootScope.cartBadges = 0;
+    console.log('run once');
 
     $ionicPlatform.ready(function () {
       // save to use plugins here
@@ -84,7 +85,8 @@ angular.module('IonicZjddConsumer', ['ionic', 'ngCordova', 'ngResource'])
         views: {
           'cart': {
             templateUrl: 'templates/views/cart.html',
-            controller: 'CartCtrl'
+            controller: 'CartCtrl',
+            controllerAs:'vm'
           }
         }
       })
