@@ -7,7 +7,7 @@
  * # SettingsController
  */
 angular.module('IonicZjddConsumer')
-  .controller('IndexCtrl', function ($scope, $rootScope, $ionicScrollDelegate, $ionicModal, AppService) {
+  .controller('IndexCtrl', function ($scope, $rootScope, $ionicScrollDelegate, $ionicLoading, $ionicModal,$timeout, AppService) {
     var vm = this;
     var handle = $ionicScrollDelegate.$getByHandle('indexIonContent');
     vm.onContentScroll = onContentScroll;
@@ -89,13 +89,22 @@ angular.module('IonicZjddConsumer')
 
 
     function showLocator() {
-
+      //todo:optimize with iconloadingConfig
+      $ionicLoading.show({
+        template: '<div class="load-a" style="color:#fff;"><ion-spinner icon="ios"></ion-spinner></div>'
+      });
       $ionicModal.fromTemplateUrl('templates/views/locator.html', {
         scope: $scope,
         animation: 'slide-in-up'/*slide-in-up|slide-left-right-ios7|fade-in-out*/
       }).then(function (modal) {
         $scope.modal = modal;
         $scope.modal.show();
+
+
+        //todo:abstracto to common setting.
+        $timeout(function(){
+          $ionicLoading.hide();
+        },1000);
       });
 
 
@@ -132,7 +141,7 @@ angular.module('IonicZjddConsumer')
       items.forEach(function (item) {
         length += item.__ui_value__;
       });
-      $rootScope.cartBadges=length;
+      $rootScope.cartBadges = length;
     }
 
   });

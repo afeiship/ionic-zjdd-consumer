@@ -79,6 +79,10 @@
       color:#666;
     }
     .col{
+      padding:0;
+      +.col{
+        border-left:1px solid #f5f5f5;
+      }
       &.activated{
         background: #f5f5f5;
         span{

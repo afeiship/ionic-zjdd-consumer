@@ -4,12 +4,12 @@
   </ion-header-bar>
 
   <ion-content class="has-footer">
-    <section class="text-center row row-center" ng-if="vm.cartItems.length<=0">
-      <div class="col col-center">
+    <section class="text-center row row-center" ng-if="vm.root.cartItems.length<=0">
+      <div class="col col-80 auto col-center">
         <i class="icon ion ion-ios-body-outline"></i>
 
         <p class="c9">世界很大,等我吃饱了再说</p>
-        <button class="button button-balanced button-block" ui-sref="main.store">去逛逛</button>
+        <button class="button button-balanced button-full button-block" ui-sref="main.store">去逛逛</button>
       </div>
     </section>
 
@@ -19,14 +19,14 @@
 
       <ion-list>
 
-        <ion-item class="item item-thumbnail-left" href="#" ng-repeat="item in vm.cartItems" ng-if="!!item.__ui_value__">
+        <ion-item class="item item-thumbnail-left" ng-repeat="item in vm.root.cartItems" ng-if="!!item.__ui_value__">
           <img ng-src="{{item.pic}}">
 
-          <h2>{{item.goods_name}}</h2>
+          <h2 class="f14">{{item.goods_name}}</h2>
 
-          <p>{{item.spec}}</p>
+          <p class="f12">{{item.spec}}</p>
 
-          <div class="row row-no-padding">
+          <div class="row row-no-padding footer">
             <span class="col">
               {{item.price | currency:'￥'}} 元
             </span>
@@ -44,11 +44,11 @@
 
   </ion-content>
 
-  <footer class="bar no-padding bar-footer"  ng-if="vm.cartItems.length>0">
+  <footer class="bar no-padding bar-footer"  ng-if="vm.root.cartItems.length>0">
     <div class="row row-no-padding">
       <div class="col margin-horizontal col-center">
-        <div class="block">
-          <span>合计:</span>
+        <div class="block" style="margin-top:3px;">
+          <span class="f12">合计:</span>
           <em class="assertive" style="font-size: 20px;">￥43.4</em>
         </div>
         <div class="c9 f10 block tip">
@@ -56,7 +56,7 @@
         </div>
       </div>
       <div class="col text-center balanced col-center">
-        再选择购
+        再选购
       </div>
       <div class="col col-center">
         <button class="button f14 button-balanced button-full">结算</button>

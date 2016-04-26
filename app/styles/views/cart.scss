@@ -34,5 +34,34 @@
       }
     }
   }
+
+  .has-list{
+
+    .f14{
+      font-size:14px;
+    }
+    .f12{
+      font-size:12px;
+    }
+
+    .item{
+      img{
+        padding:2px;
+        border:1px solid #ccc;
+      }
+    }
+
+    .item-complex {
+      .item-content{
+        padding-right:20px;
+      }
+    }
+    .footer{
+      font-size:12px;
+      position: absolute;
+      bottom:5px;
+      width:60%;
+    }
+  }
 }
 /**cart  End**/
