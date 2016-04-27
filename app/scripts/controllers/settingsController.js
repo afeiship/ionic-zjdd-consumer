@@ -7,19 +7,20 @@
  * # SettingsController
  */
 angular.module('IonicZjddConsumer')
-  .controller('SettingsCtrl', function ($scope, $ionicActionSheet,$ionicHistory) {
+  .controller('SettingsCtrl', function ($scope, $ionicActionSheet, $ionicHistory, $rootScope) {
     var vm = this;
     vm.showModal = showModal;
-    vm.back=back;
+    vm.back = back;
 
+    $rootScope.tabHidden = true;
 
-    function back(){
+    function back() {
       $ionicHistory.goBack();
     }
 
     function showModal() {
 
-      var hideSheet = $ionicActionSheet.show({
+      $ionicActionSheet.show({
         buttons: [
           {text: '拍照'},
           {text: '从相册选择'}
@@ -34,4 +35,6 @@ angular.module('IonicZjddConsumer')
         }
       });
     }
+
+
   });

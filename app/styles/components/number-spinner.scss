@@ -2,8 +2,8 @@
 .number-spinner {
   display: inline-block;
   position: relative;
-  height:24px;
-  line-height:24px;
+  height:32px;
+  line-height:32px;
   width:100px;
   border-radius: 100px;
   background: #f5f5f5;
@@ -22,16 +22,18 @@
   .plus{
     font-weight: bold;
     border-radius: 100px;
-    width:30%;
+    width:35%;
     &.activated{
-      color:darken($balanced,10%);
-      background: darken(#f5f5f5,20%);
+      color:#fff;
+      background: darken(#f5f5f5,40%);
     }
   }
   .value{
     text-align: center;
-    width:40%;
-    margin:0 30%
+    width:30%;
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
   }
   .plus{
     right:0;

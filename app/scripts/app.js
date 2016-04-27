@@ -17,7 +17,7 @@ angular.module('IonicZjddConsumer', ['ionic', 'ngCordova', 'ngResource'])
     $rootScope.cartItems = [];
     $rootScope.cartBadges = 0;
     $rootScope.total = 0;
-    console.log('run once');
+    $rootScope.tabHidden = false;
 
     $ionicPlatform.ready(function () {
       // save to use plugins here

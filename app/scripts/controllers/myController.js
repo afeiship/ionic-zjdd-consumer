@@ -7,9 +7,10 @@
  * # SettingsController
  */
 angular.module('IonicZjddConsumer')
-  .controller('MyCtrl', function ($scope,$state) {
+  .controller('MyCtrl', function ($scope,$state,$rootScope) {
     var vm=this;
     vm.toSettings=toSettings;
+    $rootScope.tabHidden=false;
 
     function toSettings(){
       //$state.go('settings');
