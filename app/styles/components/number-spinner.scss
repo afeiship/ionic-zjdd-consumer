@@ -1,5 +1,7 @@
 /**number-spinner Start**/
 .number-spinner {
+  //todo:button/input padding should be `0` in ios device;
+
   display: inline-block;
   position: relative;
   height:32px;
@@ -7,10 +9,10 @@
   width:100px;
   border-radius: 100px;
   background: #f5f5f5;
+  border:1px solid #ccc;
   input,
   button{
     height:100%;
-    -webkit-appearance: none;
     border: none;
     background: none;
     user-select: none;
@@ -22,16 +24,23 @@
   .plus{
     font-weight: bold;
     border-radius: 100px;
+    padding:0;
     width:35%;
+    z-index:2;
     &.activated{
       color:#fff;
       background: darken(#f5f5f5,40%);
     }
   }
   .value{
+    z-index:1;
     text-align: center;
+    border-radius: 0;
+    padding:0;
     width:30%;
     position: absolute;
+    font-size:14px;
+    -webkit-appearance: none;
     left:50%;
     transform: translateX(-50%);
   }
