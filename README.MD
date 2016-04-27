@@ -20,3 +20,14 @@
 ##codava api:
 + http://tool.oschina.net/uploads/apidocs/phonegap1.9/index.html
 + http://ngcordova.com/
+
+
+##add icons + splash
++ http://ionicframework.com/docs/cli/icon-splashscreen.html
++ cd ionic-zjdd-consumer
++ ionic resources --splash
++ ionic resources --icons
++ ionic resources
+
+##start a new project
++ http://ionicframework.com/docs/cli/start.html
