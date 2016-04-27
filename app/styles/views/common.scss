@@ -1,5 +1,7 @@
 /**common Start**/
-
+[ng-cloak]{
+  display: none;
+}
 .list {
   &.common-items {
     .item {
