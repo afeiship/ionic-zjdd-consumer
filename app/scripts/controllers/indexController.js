@@ -7,7 +7,7 @@
  * # SettingsController
  */
 angular.module('IonicZjddConsumer')
-  .controller('IndexCtrl', function ($scope, $rootScope, $ionicScrollDelegate, $ionicLoading, $ionicModal, $timeout, AppService) {
+  .controller('IndexCtrl', function ($scope,$ionicPlatform, $rootScope, $ionicScrollDelegate, $ionicLoading, $ionicModal, $timeout, AppService) {
     var vm = this;
     var handle = $ionicScrollDelegate.$getByHandle('indexIonContent');
     vm.onContentScroll = onContentScroll;
@@ -39,6 +39,14 @@ angular.module('IonicZjddConsumer')
         }
       ]
     };
+
+
+    $ionicLoading.show({
+      template: '<div class="load-a" style="color:#fff;"><ion-spinner icon="ios"></ion-spinner></div>'
+    });
+    $ionicPlatform.ready(function(){
+      $ionicLoading.hide();
+    });
 
 
     init();
